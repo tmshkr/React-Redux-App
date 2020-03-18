@@ -6,6 +6,8 @@ import {
   Switch
 } from "react-router-dom";
 
+import { useSelector } from "react-redux";
+
 import SearchBar from "./components/SearchBar";
 import SearchResults from "./components/SearchResults";
 import Tabs from "./components/Tabs";
@@ -15,19 +17,10 @@ import Movie from "./components/Movie";
 import initialData from "./data/movies";
 
 function App() {
-  const [savedList, setSavedList] = useState([]);
+  const state = useSelector(state => state);
+  const { movieCache, savedList } = state;
+
   const [movies, setMovies] = useState(initialData);
-
-  const addToSavedList = id => {
-    if (!savedList.includes(id)) {
-      setSavedList([...savedList, id]);
-    }
-  };
-
-  const deleteFromSavedList = id => {
-    const filtered = savedList.filter(el => el !== id);
-    setSavedList(filtered);
-  };
 
   return (
     <Router>
@@ -36,19 +29,16 @@ function App() {
         <Tabs />
         <Switch>
           <Route path="/saved">
-            <SavedList movies={movies} savedList={savedList} />
+            <SavedList movies={movieCache} savedList={savedList} />
           </Route>
           <Route path={["/search/:term/:page", "/search/:term", "/search"]}>
             <SearchResults />
           </Route>
           <Route exact path="/movies">
-            <MovieList movies={movies} />
+            <MovieList movies={movieCache} />
           </Route>
           <Route path="/movies/:id">
-            <Movie
-              handleMovies={[movies, setMovies]}
-              handleList={[savedList, addToSavedList, deleteFromSavedList]}
-            />
+            <Movie movieCache={movieCache} handleMovies={[movies, setMovies]} />
           </Route>
           <Redirect to="/movies" />
         </Switch>

@@ -1,8 +1,12 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+
+import { addToSavedList, deleteFromSavedList } from "../actions";
 
 function MovieCard(props) {
-  const { movie, handleList } = props;
-  const [savedList, addToSavedList, deleteFromSavedList] = handleList;
+  const dispatch = useDispatch();
+  const savedList = useSelector(state => state.savedList);
+  const { movie } = props;
   const { imdbID, Title, Director, imdbRating, Actors, Poster, Plot } = movie;
 
   const isSaved = savedList.includes(imdbID);
@@ -31,7 +35,7 @@ function MovieCard(props) {
             <button
               type="button"
               className="btn btn-primary"
-              onClick={() => deleteFromSavedList(imdbID)}
+              onClick={() => dispatch(deleteFromSavedList(imdbID))}
             >
               Saved
             </button>
@@ -39,7 +43,7 @@ function MovieCard(props) {
             <button
               type="button"
               className="btn btn-primary"
-              onClick={() => addToSavedList(imdbID)}
+              onClick={() => dispatch(addToSavedList(imdbID))}
             >
               Save
             </button>

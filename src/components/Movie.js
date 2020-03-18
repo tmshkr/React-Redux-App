@@ -8,10 +8,10 @@ import MovieCard from "./MovieCard";
 function Movie(props) {
   const match = useRouteMatch();
   const { id } = match.params;
-  const { handleList, handleMovies } = props;
-  const [movies, setMovies] = handleMovies;
+  const { movieCache } = props;
+  // const [movies, setMovies] = handleMovies;
   const [error, setError] = useState("");
-  const movie = movies[id];
+  const movie = movieCache[id];
 
   useEffect(() => {
     if (!movie) {
@@ -20,9 +20,9 @@ function Movie(props) {
         if (data.Error) {
           return setError(data.Error);
         }
-        const copy = { ...movies };
-        copy[id] = data;
-        setMovies(copy);
+        // const copy = { ...movies };
+        // copy[id] = data;
+        // setMovies(copy);
       });
     }
     // eslint-disable-next-line
@@ -34,7 +34,7 @@ function Movie(props) {
     return <Alert color="secondary">Loading...</Alert>;
   }
 
-  return <MovieCard movie={movie} handleList={handleList} />;
+  return <MovieCard movie={movie} />;
 }
 
 export default Movie;
