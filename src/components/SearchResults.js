@@ -19,7 +19,6 @@ function SearchResults(props) {
   };
 
   useEffect(() => {
-    console.log("useEffect fired");
     if (term) {
       dispatch(handleSearch(term, page));
     }
@@ -28,7 +27,7 @@ function SearchResults(props) {
 
   return (
     <div className="search-results">
-      {totalResults > 0 ? (
+      {totalResults > 0 && term ? (
         <>
           <MovieList movies={searchResults} />
           <nav className="pagination" aria-label="Pagination">

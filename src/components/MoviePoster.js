@@ -10,7 +10,7 @@ function MoviePoster(props) {
       onClick={() => history.push(`/movies/${imdbID}`)}
     >
       <h3>{Title}</h3>
-      <img src={Poster} alt={Title} />
+      {Poster !== "N/A" && <img src={Poster} alt={Title} />}
     </div>
   );
 }
