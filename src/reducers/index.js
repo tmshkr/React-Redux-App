@@ -1,4 +1,8 @@
-import { ADD_SAVED_MOVIE, REMOVE_SAVED_MOVIE } from "../actions/types";
+import {
+  ADD_TO_MOVIE_CACHE,
+  ADD_SAVED_MOVIE,
+  REMOVE_SAVED_MOVIE
+} from "../actions/types";
 import movieCache from "../data/movies";
 
 const initialState = {
@@ -9,6 +13,9 @@ const initialState = {
 export const movieReducer = (state = initialState, action) => {
   const newState = { ...state };
   switch (action.type) {
+    case ADD_TO_MOVIE_CACHE:
+      newState.movieCache[action.id] = action.payload;
+      break;
     case ADD_SAVED_MOVIE:
       newState.savedList.push(action.id);
       break;

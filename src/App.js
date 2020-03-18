@@ -20,8 +20,6 @@ function App() {
   const state = useSelector(state => state);
   const { movieCache, savedList } = state;
 
-  const [movies, setMovies] = useState(initialData);
-
   return (
     <Router>
       <SearchBar />
@@ -38,7 +36,7 @@ function App() {
             <MovieList movies={movieCache} />
           </Route>
           <Route path="/movies/:id">
-            <Movie movieCache={movieCache} handleMovies={[movies, setMovies]} />
+            <Movie movieCache={movieCache} />
           </Route>
           <Redirect to="/movies" />
         </Switch>

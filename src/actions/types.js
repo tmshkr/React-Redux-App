@@ -1,4 +1,5 @@
 export const FETCH_MOVIE = "FETCH_MOVIE";
+export const ADD_TO_MOVIE_CACHE = "ADD_TO_MOVIE_CACHE";
 export const SEARCH_QUERY = "SEARCH_QUERY";
 export const ADD_SAVED_MOVIE = "ADD_SAVED_MOVIE";
 export const REMOVE_SAVED_MOVIE = "REMOVE_SAVED_MOVIE";

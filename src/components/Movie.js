@@ -1,29 +1,21 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
-import { useRouteMatch } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import { Alert } from "reactstrap";
-import key from "../config";
+
+import { fetchMovie } from "../actions";
 import MovieCard from "./MovieCard";
 
 function Movie(props) {
-  const match = useRouteMatch();
-  const { id } = match.params;
+  const dispatch = useDispatch();
+  const { id } = useParams();
   const { movieCache } = props;
-  // const [movies, setMovies] = handleMovies;
   const [error, setError] = useState("");
   const movie = movieCache[id];
 
   useEffect(() => {
     if (!movie) {
-      const url = `https://www.omdbapi.com/?i=${id}&apikey=${key}`;
-      axios.get(url).then(({ data }) => {
-        if (data.Error) {
-          return setError(data.Error);
-        }
-        // const copy = { ...movies };
-        // copy[id] = data;
-        // setMovies(copy);
-      });
+      dispatch(fetchMovie(id));
     }
     // eslint-disable-next-line
   }, []);
