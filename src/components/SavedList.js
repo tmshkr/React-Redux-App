@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Alert } from "reactstrap";
-import "./SavedList.scss";
 
 function SavedList(props) {
   const { movies, savedList } = props;

@@ -13,7 +13,6 @@ import SavedList from "./components/SavedList";
 import MovieList from "./components/MovieList";
 import Movie from "./components/Movie";
 import initialData from "./data/movies";
-import "./App.scss";
 
 function App() {
   const [savedList, setSavedList] = useState([]);

@@ -5,7 +5,6 @@ import { useParams, useHistory, useLocation } from "react-router-dom";
 import MovieList from "./MovieList";
 import ReactPaginate from "react-paginate";
 import key from "../config";
-import "./SearchResults.scss";
 
 function SearchResults(props) {
   const location = useLocation();

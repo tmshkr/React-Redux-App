@@ -1,6 +1,5 @@
 import React from "react";
 import MoviePoster from "./MoviePoster";
-import "./MovieList.scss";
 
 function MovieList(props) {
   const { movies } = props;

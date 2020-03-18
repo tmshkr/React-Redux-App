@@ -1,6 +1,5 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import "./MoviePoster.scss";
 
 function MoviePoster(props) {
   const history = useHistory();

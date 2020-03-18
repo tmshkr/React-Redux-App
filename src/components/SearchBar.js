@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { InputGroup, InputGroupAddon, Input, Button } from "reactstrap";
 
-import "./SearchBar.scss";
-
 function SearchBar() {
   const [searchText, setSearchText] = useState("");
   const history = useHistory();
