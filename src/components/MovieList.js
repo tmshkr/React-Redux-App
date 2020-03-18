@@ -2,10 +2,10 @@ import React from "react";
 import MoviePoster from "./MoviePoster";
 
 function MovieList(props) {
-  const { movieCache } = props;
+  const { movies } = props;
   return (
     <div className="movie-list">
-      {Object.values(movieCache).map(movie => (
+      {Object.values(movies).map(movie => (
         <MoviePoster key={movie.imdbID} movie={movie} />
       ))}
     </div>

@@ -32,7 +32,7 @@ function App() {
             <SearchResults />
           </Route>
           <Route exact path="/movies">
-            <MovieList movieCache={movieCache} />
+            <MovieList movies={movieCache} />
           </Route>
           <Route path="/movies/:id">
             <Movie movieCache={movieCache} savedList={savedList} />
