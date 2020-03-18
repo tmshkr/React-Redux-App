@@ -16,8 +16,7 @@ import MovieList from "./components/MovieList";
 import Movie from "./components/Movie";
 
 function App() {
-  const state = useSelector(state => state);
-  const { movieCache, savedList } = state;
+  const { movieCache, savedList } = useSelector(state => state.movies);
 
   return (
     <Router>

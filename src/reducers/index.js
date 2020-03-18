@@ -1,3 +1,5 @@
+import { combineReducers } from "redux";
+
 import {
   ADD_TO_MOVIE_CACHE,
   ADD_SAVED_MOVIE,
@@ -10,7 +12,7 @@ const initialState = {
   movieCache
 };
 
-export const movieReducer = (state = initialState, action) => {
+const movieReducer = (state = initialState, action) => {
   const newState = { ...state };
   switch (action.type) {
     case ADD_TO_MOVIE_CACHE:
@@ -28,3 +30,5 @@ export const movieReducer = (state = initialState, action) => {
   }
   return newState;
 };
+
+export default combineReducers({ movies: movieReducer });
