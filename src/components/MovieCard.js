@@ -1,11 +1,9 @@
 import React from "react";
-import { useDispatch } from "react-redux";
 
 import { addToSavedList, deleteFromSavedList } from "../actions";
 
 function MovieCard(props) {
-  const dispatch = useDispatch();
-  const { movie, savedList } = props;
+  const { movie, savedList, dispatch } = props;
   const { imdbID, Title, Director, imdbRating, Actors, Poster, Plot } = movie;
 
   const isSaved = savedList.includes(imdbID);

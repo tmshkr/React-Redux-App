@@ -26,7 +26,7 @@ function Movie(props) {
     return <Alert color="secondary">Loading...</Alert>;
   }
 
-  return <MovieCard movie={movie} savedList={savedList} />;
+  return <MovieCard movie={movie} savedList={savedList} dispatch={dispatch} />;
 }
 
 export default Movie;
