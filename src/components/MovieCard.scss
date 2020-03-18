@@ -1,0 +1,24 @@
+.movie-card {
+  color: #fff;
+  padding: 1rem;
+
+  div {
+    display: flex;
+    &.movie-info {
+      padding: 1rem;
+      flex-direction: column;
+    }
+    &.img-wrapper {
+      display: block;
+      text-align: center;
+    }
+  }
+  @media (max-width: 900px) {
+    div {
+      display: block;
+    }
+    h3 {
+      text-align: center;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+  // outline: 1px solid cyan;
+}
+
+html,
+body {
+  // height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 21px;
+  // color: #fff;
+}
+
+body {
+  background: #333;
+  font-family: sans-serif;
+}
+
+// div#root {
+//   height: 100%;
+
+// margin: auto;
+// display: grid;
+// grid-template-columns: 1fr 2fr;
+// }
