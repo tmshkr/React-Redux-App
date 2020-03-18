@@ -1,12 +1,11 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 import { addToSavedList, deleteFromSavedList } from "../actions";
 
 function MovieCard(props) {
   const dispatch = useDispatch();
-  const savedList = useSelector(state => state.savedList);
-  const { movie } = props;
+  const { movie, savedList } = props;
   const { imdbID, Title, Director, imdbRating, Actors, Poster, Plot } = movie;
 
   const isSaved = savedList.includes(imdbID);

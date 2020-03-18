@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   BrowserRouter as Router,
   Route,
@@ -14,7 +14,6 @@ import Tabs from "./components/Tabs";
 import SavedList from "./components/SavedList";
 import MovieList from "./components/MovieList";
 import Movie from "./components/Movie";
-import initialData from "./data/movies";
 
 function App() {
   const state = useSelector(state => state);
@@ -27,16 +26,16 @@ function App() {
         <Tabs />
         <Switch>
           <Route path="/saved">
-            <SavedList movies={movieCache} savedList={savedList} />
+            <SavedList movieCache={movieCache} savedList={savedList} />
           </Route>
           <Route path={["/search/:term/:page", "/search/:term", "/search"]}>
             <SearchResults />
           </Route>
           <Route exact path="/movies">
-            <MovieList movies={movieCache} />
+            <MovieList movieCache={movieCache} />
           </Route>
           <Route path="/movies/:id">
-            <Movie movieCache={movieCache} />
+            <Movie movieCache={movieCache} savedList={savedList} />
           </Route>
           <Redirect to="/movies" />
         </Switch>
