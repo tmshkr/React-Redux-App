@@ -17,7 +17,7 @@ export const movieReducer = (state = initialState, action) => {
       newState.movieCache[action.id] = action.payload;
       break;
     case ADD_SAVED_MOVIE:
-      newState.savedList.push(action.id);
+      newState.savedList = [...newState.savedList, action.id];
       break;
     case REMOVE_SAVED_MOVIE:
       const filtered = newState.savedList.filter(id => id !== action.id);
