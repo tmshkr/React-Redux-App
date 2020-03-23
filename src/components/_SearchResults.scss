@@ -1,0 +1,13 @@
+ul.pagination {
+  margin: 3rem auto;
+  user-select: none;
+  a {
+    cursor: pointer;
+    &:hover {
+      color: #007bff;
+    }
+  }
+  li.break {
+    display: none;
+  }
+}

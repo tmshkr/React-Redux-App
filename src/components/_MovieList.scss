@@ -1,0 +1,16 @@
+div.movie-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: fit-content;
+  margin: auto;
+  // grid-template-rows: 426px;
+  justify-items: center;
+  gap: 1rem;
+
+  @media (max-width: 960px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,28 @@
+@import "~bootstrap";
+@import "App";
+@import "components/MovieCard";
+@import "components/MovieList";
+@import "components/MoviePoster";
+@import "components/SavedList";
+@import "components/SearchBar";
+@import "components/SearchResults";
+@import "components/Tabs";
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 21px;
+}
+
+body {
+  background: #333;
+  font-family: sans-serif;
+}
